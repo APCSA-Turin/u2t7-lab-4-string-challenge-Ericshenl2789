@@ -28,6 +28,9 @@ public class StringProblems{
     // conCat("dog", "cat") → "dogcat"
     // conCat("abc", "") → "abc"
     public String conCat(String s1, String s2){
+        if (s1.length() == 0 || s2.length() == 0 ) {
+            return s1 + s2;
+        }
         String firstLetter = s2.substring(0, 1);
         String lastLetter = s1.substring(s1.length()-1);
         if (firstLetter.equals(lastLetter)) {
@@ -43,6 +46,10 @@ public class StringProblems{
     // deFront("java") → "va"
     // deFront("away") → "aay"
     public String deFont(String s1){
+        String first = s1.substring(0,1);
+        if (first.equals("a")||first.equals("b")){
+            return first + s1.substring(2);
+        }
         return s1.substring(2);
     }
 
@@ -94,11 +101,11 @@ public class StringProblems{
     // fizzString2(3) → "Fizz!"
     public String testfizzString2(int x){
         if (x % 3 == 0 && x % 5 == 0){
-            return "FizzBuzz";
+            return "FizzBuzz!";
         } else if (x % 3 == 0 ) {
-            return "Fizz";
+            return "Fizz!";
         } else if (x % 5 == 0 ) {
-            return "Buzz";
+            return "Buzz!";
         }
         
         return x + "!";
